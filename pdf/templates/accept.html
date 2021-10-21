@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resume Builder</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+
+    <div class="container">
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h1>Resume Builder</h1>
+                <br>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h4>Please Fill Your Details</h4>
+            </div>
+        </div>
+    
+
+        <div class="row m-5">
+            <div class="col-md-7">
+                <!--Form to collect user details-->   
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <b>Personal Details*</b>
+                    <hr>
+
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-Mail</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter E-Mail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>About You</label>
+                        <textarea class="form-control" id="about_you" name="about_you" placeholder="A brief introduction about yourself" required style = "white-space: pre-wrap;"></textarea>
+                    </div> 
+                    <hr>
+                    <b>College Details*</b>
+                    <hr> 
+                    <div class="form-group">
+                        <label>Degree</label>
+                        <input type="text" class="form-control" id="degree" name="degree" placeholder="eg. B Tech" required>
+                    </div>
+                    <div class="form-group">
+                        <label>College Name</label>
+                        <input type="text" class="form-control" id="university" name="university" placeholder="University Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>College CGPA (between 0 - 10)</label>
+                        <input type="number" class="form-control" id="cgpa" name="cgpa" placeholder="Enter CGPA" required max = 10 min = 0 step = "0.01">
+                    </div>
+                    <hr>
+                    <b>School Details*</b>
+                    <hr>
+                    <div class="form-group">
+                        <label>School</label>
+                        <input type="text" class="form-control" id="school" name="school" placeholder="School Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>School Percentage</label>
+                        <input type="number" class="form-control" id="school_percentage" name="school_percentage" placeholder="Enter %" required max = 100 min = 0>
+                    </div>
+
+                    <hr>      
+                    <b>Previous Experience (OPTIONAL)</b>
+                    <hr> 
+                    <div class="form-group">
+                        <label>Previous Work - Job Title (Leave blank if NONE)</label>
+                        <input type = "text" class="form-control" id="previous_work_title" name="previous_work_title" placeholder="Job Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Previous Work - Company</label>
+                        <input type = "text" class="form-control" id="previous_work_company" name="previous_work_company" placeholder="Company">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Previous Work Description</label>
+                        <textarea class="form-control" id="previous_work" name="previous_work" placeholder="Job Description" rows = 3></textarea>
+                    </div>
+
+                    <hr>
+                    <b>Project Details (OPTIONAL)</b>
+                    <hr> 
+                    <div class="form-group">
+                        <label>Project Title (Leave blank if NONE)</label>
+                        <input type = "text" class="form-control" id="project_title" name="project_title" placeholder="Project Title"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Project Description</label>
+                        <textarea class="form-control" id="projects" name="projects" placeholder="Project Description" rows = 3></textarea>
+                    </div> 
+                    <hr>
+                    <b>Skills and Interests*</b>
+                    <hr> 
+                    <div class="form-group">
+                        <label>Skill (One skill per line, with blank line separator)</label>
+                        <textarea class="form-control" id="skill" name="skill" placeholder="Skill 1 &#10;--Blank Line--&#10;Skill 2 &#10;--Blank Line--&#10;Skill 3" required rows = 5></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interests/Hobbies (One interest per line, with blank line separator)</label>
+                        <textarea class="form-control" id="interests" name="interests" placeholder="Hobby 1 &#10;--Blank Line--&#10;Hobby 2 &#10;--Blank Line--&#10;Hobby 3" required rows = 5></textarea>
+                    </div>     
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                </form>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h5>Code Available on <a href="https://github.com/pillaikartik10/resume-maker" target="_blank" rel="noopener noreferrer">Github</a></h5>
+                <br>
+                <p>Created by Kartik Pillai</p>
+                <br>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
